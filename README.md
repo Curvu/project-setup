@@ -11,8 +11,8 @@
 
 ### Setup 🔧
 
-```
-git clone path/to/repo
+```bash
+$ git clone path/to/repo
 ```
 
 ### Run 📦
@@ -21,12 +21,18 @@ If you're using the command line:
 
 ```bash
 # Linux/MacOS
-docker compose up
+$ docker compose up
 ```
 
 ### More commands 📋
 ```bash
-docker compose exec backend sh # Access backend container terminal
+$ docker compose exec backend sh # Access backend container terminal
+```
+
+Inside the backend terminal:
+```bash
+$ db:create # Run make migrations
+$ db:migrate # Run migrations
 ```
 
 ### Test ⚙️
@@ -34,4 +40,4 @@ Backend should be running on port 3000 and frontend on port 5173.
 
 ## Built With 🛠️
 - Docker and Docker Compose
-- Django
+- Django - Backend REST API
