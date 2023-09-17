@@ -1,0 +1,7 @@
+@import "../../styles/mixins.scss";
+
+.testDiv {
+  > h1 {
+    @include text($size: 24rem);
+  }
+}

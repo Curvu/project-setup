@@ -1,0 +1,42 @@
+@import './variables.scss';
+
+@mixin size($width: auto, $height: fit-content) {
+  width: $width;
+  height: $height;
+}
+
+@mixin container($backgroundColor: $white, $border: $simpleBorder, $borderRadius: 0, $borderColor: $white, $padding: 0, $shadow: none) {
+  background-color: $backgroundColor;
+  border: $border;
+  border-radius: $borderRadius;
+  border-color: $borderColor;
+  box-shadow: $shadow;
+  padding: $padding;
+}
+
+@mixin text($family: $montserrat, $size: 1rem, $height: normal, $weight: 400, $color: $black) {
+  font-family: $family;
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin flex($direction: row, $justify: flex-start, $align: center, $gap: 1rem, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-wrap: $wrap;
+}
+
+@mixin grid($template: 1fr, $justify: center, $flow: column, $align: center, $gap: 1rem, $autoRows: auto) {
+  display: grid;
+  grid-template: $template;
+  grid-auto-flow: $flow;
+  justify-items: $justify;
+  align-items: $align;
+  grid-gap: $gap;
+  grid-auto-rows: $autoRows;
+}

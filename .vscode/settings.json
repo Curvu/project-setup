@@ -1,0 +1,12 @@
+{
+  "eslint.enable": true,
+  "eslint.workingDirectories": [
+    "frontend",
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact"
+  ],
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true
+}

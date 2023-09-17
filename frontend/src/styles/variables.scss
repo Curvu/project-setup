@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Raleway:wght@500;600;700&display=swap');
+
+$montserrat: 'Montserrat', sans-serif;
+$raleway: 'Raleway', sans-serif;
+
+$white: #FFFFFF;
+$mainWhite: #F9F9F9;
+$black: #161616;
+$lightGray: #E9E9E9;
+$darkGray: #909090;
+$disabled: #F5F5F5;
+$txtDisabled: #C8C8C8;
+$red: #CC4343;
+$yellow: #FFD166;
+$green: #65976A;
+
+$modalShadow: rgba(0, 0, 0, 0.25);
+$cardShadow: 0px 1px 4px 0px rgba(34, 34, 34, 0.1);
+
+$smallRadius: 0.25rem;
+$mediumRadius: 0.5rem;
+$mediumLargeRadius: 0.75rem;
+$largeRadius: 1rem;
+$extraLargeRadius: 1.5rem;
+$loginRadius: 0 $largeRadius $largeRadius 0;
+
+$fullWidth: 100vw;
+$halfWidth: 50vw;
+$fullHeight: 100vh;
+$halfHeight: 50vh;
+
+$simpleBorder: 1px solid;
+$dashedBorder: 1px dashed;
+
+$inputPadding: 0.75rem 0.5rem;
