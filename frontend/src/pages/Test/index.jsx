@@ -16,14 +16,24 @@ export const Test = () => {
   return (
     <div className={styles.testDiv} >
       <h1>Test</h1>
-      <div>
-        {users?.map((user) => (
-          <div key={user.id}>
-            <p>{user.name}</p>
-            <p>{user.email}</p>
-          </div>
-        ))}
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users?.map((user) => (
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }

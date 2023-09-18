@@ -27,6 +27,7 @@ $ docker compose up
 ### More commands 📋
 ```bash
 $ docker compose exec backend sh # Access backend container terminal
+$ docker compose exec frontend sh # Access frontend container terminal
 ```
 
 Inside the backend terminal:
@@ -40,4 +41,8 @@ Backend should be running on port 3000 and frontend on port 5173.
 
 ## Built With 🛠️
 - Docker and Docker Compose
-- Django - Backend REST API
+- Backend
+  - Django Rest Framework
+- Frontend
+  - Vite - React
+  - Sass

@@ -1,7 +1,21 @@
 @import "../../styles/mixins.scss";
 
 .testDiv {
+  @include flex(column);
+
   > h1 {
-    @include text($size: 24rem);
+    @include text($size: 3rem);
+  }
+
+  > table {
+    border: 1px solid black;
+
+    th {
+      @include text($size: 1.5rem, $weight: bold);
+    }
+
+    td {
+      @include text($size: 1.5rem);
+    }
   }
 }
