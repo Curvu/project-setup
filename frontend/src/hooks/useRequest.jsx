@@ -1,33 +1,33 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback } from 'react';
 
-export const useRequest = (requestFunc, options=null) => {
-  const [data, setData] = useState(null)
-  const [error, setError] = useState(null)
-  const [isLoading, setLoading] = useState(true)
+export const useRequest = (requestFunc, options = null) => {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [isLoading, setLoading] = useState(true);
 
   const doRequest = useCallback(
     (params) => {
-      setError(null)
+      setError(null);
 
       requestFunc(params)
         .then(({ data }) => {
-          setData(data)
-          options?.onSuccess?.(data)
+          setData(data);
+          options?.onSuccess?.(data);
         })
         .catch((error) => {
-          setData(null)
-          setError(error)
-          options?.onError?.(error)
+          setData(null);
+          setError(error);
+          options?.onError?.(error);
         })
-        .finally(() => setLoading(false))
+        .finally(() => setLoading(false));
     },
-    [requestFunc, options]
-  )
+    [requestFunc, options],
+  );
 
   return {
     doRequest,
     data,
     isLoading,
     error,
-  }
-}
+  };
+};

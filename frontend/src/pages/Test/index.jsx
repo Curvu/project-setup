@@ -1,20 +1,21 @@
-import { api } from 'api/api'
-import styles from './test.module.scss'
-import { useRequest } from 'hooks/useRequest'
-import { useEffect } from 'react'
+import { api } from 'api/api';
+import { useRequest } from 'hooks/useRequest';
+import React, { useEffect } from 'react';
+import styles from './test.module.scss';
 
-export const Test = () => {
+export function Test() {
   const { data: users, doRequest: getUsers } = useRequest(api.getUsers, {
-    onSuccess: () => console.log('Success fetching event'),
-    onError: () => console.log('Error fetching event')
-  })
+    onSuccess: () => {},
+    onError: () => {},
+  });
 
   useEffect(() => {
-    getUsers()
-  }, [])
+    getUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <div className={styles.testDiv} >
+    <div className={styles.testDiv}>
       <h1>Test</h1>
       <table>
         <thead>
@@ -35,5 +36,5 @@ export const Test = () => {
         </tbody>
       </table>
     </div>
-  )
+  );
 }
