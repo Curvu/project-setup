@@ -10,7 +10,7 @@ export default defineConfig({
     },
     host: true, // needed for the Docker Container port mapping to work
     strictPort: true,
-    port: 3000, // you can replace this port with any port
+    port: 3000,
   },
   define: {
     'process.env': {},
@@ -19,6 +19,12 @@ export default defineConfig({
     alias: {
       hooks: '/src/hooks',
       api: '/src/api',
+      utils: '/src/utils',
+      pages: '/src/pages',
+      components: '/src/components',
+      fonts: '/src/assets/fonts',
+      images: '/src/assets/images',
+      styles: '/src/styles',
     },
   },
 });
