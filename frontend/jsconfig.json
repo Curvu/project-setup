@@ -1,6 +1,25 @@
 {
   "compilerOptions": {
-    "baseUrl": "src"
-  },
-  "include": ["src"]
+    "baseUrl": "src",
+    "paths": {
+      "utils/*": [
+        "src/utils/*"
+      ],
+      "pages/*": [
+        "src/pages/*"
+      ],
+      "components/*": [
+        "src/components/*"
+      ],
+      "fonts/*": [
+        "src/assets/fonts/*"
+      ],
+      "images/*": [
+        "src/assets/images/*"
+      ],
+      "styles/*": [
+        "src/styles/*"
+      ]
+    }
+  }
 }
