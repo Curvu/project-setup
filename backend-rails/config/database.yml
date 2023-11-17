@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV['DATABASE_CONNECTIONS'] || ENV['PUMA_THREADS'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host:     <%= ENV['DATABASE_HOST'] %>
+  port:     <%= ENV.fetch('DATABASE_PORT', 5432) %>
+  url:      <%= ENV['DATABASE_URL'] %>
+  variables:
+    statement_timeout: <%= ENV.fetch('DB_STATEMENT_TIMEOUT', '60s') %>
+
+development: &development
+  <<: *default
+  database: <%= ENV.fetch('DATABASE_NAME', 'development') %>
+
+test: &test
+  <<: *default
+  database: <%= ENV.fetch('DATABASE_NAME', 'test') %>
