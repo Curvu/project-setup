@@ -1,19 +1,42 @@
 version: "3.9"
 services:
-  backend:
+  backend-django:
     build:
-      context: backend/.
+      context: backend-django/.
+      dockerfile: Dockerfile
+      target: development
+    stdin_open: true
+    tty: true
+    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8080"
+    volumes:
+      - ./backend-django:/app
+    ports:
+      - 8080:8080
+
+  database-postgres:
+    image: postgres:14
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+
+  backend-rails:
+    build:
+      context: backend-rails/.
       dockerfile: Dockerfile
       target: development
     stdin_open: true
     env_file:
-      - backend/.env
+      - backend-rails/.env
     tty: true
-    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8080"
+    command: ./bin/dev
     volumes:
-      - ./backend:/app
+      - ./backend-rails:/app
+      - gems:/bundle
     ports:
-      - 8080:8080
+      - 8081:8081
+    depends_on:
+      - database-postgres
 
   frontend:
     image: node:18-alpine
