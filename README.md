@@ -42,11 +42,12 @@ docker compose up
 
 ### More commands 📋
 ```bash
-docker compose exec backend sh # Access backend container terminal
+docker compose exec backend-django sh # Access Django backend container terminal
+docker compose exec backend-rails bash # Access Rails backend container terminal
 docker compose exec frontend sh # Access frontend container terminal
 ```
 
-Inside the backend terminal:
+Inside the django container you can run the following commands:
 ```bash
 db:create # Make migrations
 db:migrate # Migrate
@@ -63,7 +64,8 @@ Backend should be running on port 8080 and frontend on port 3000.
 ## Built With 🛠️
 - Docker and Docker Compose
 - Backend
-  - Django Rest Framework
+  - Django
+  - Rails
 - Frontend
   - Vite - React
   - Sass
