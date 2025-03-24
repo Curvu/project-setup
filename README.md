@@ -1,5 +1,8 @@
 # Utils to setup the environment
 
+## Deprecated 🚫
+This repository is deprecated.
+
 ## Getting Started 🚀
 
 ### Prerequisites 📋
